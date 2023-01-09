@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class RequestAssetModel {
     private Long id;
     private Long picId;
-    private Long studentId;
+    private Long assetId;
     private String approval;
 
 }
