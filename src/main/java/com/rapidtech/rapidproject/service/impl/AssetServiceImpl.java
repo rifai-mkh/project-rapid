@@ -24,7 +24,9 @@ public class AssetServiceImpl implements AssetService {
         for (Asset asset : assets) {
             assetResDtoList.add(AssetResDto.builder()
                     .id(Asset.getId())
-                    .assetNo()
+                    .assetNo(asset.getAssetNo())
+                    .assetName(asset.getAssetName())
+                    .type(asset.)
         }
         return studentResDtoList;
     }
