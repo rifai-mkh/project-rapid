@@ -1,5 +1,6 @@
 package com.rapidtech.rapidproject.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,11 +28,16 @@ public class Asset {
     private String type;
 
     @Column(name = "serial_number", length = 120)
-    private String assetSerialNumber;
+    private String serialNumber;
 
     @Column(name = "purchase_year", length = 120)
-    private Long assetPurchaseYear;
+    private Long purchaseYear;
 
     @Column(name = "status", length = 120)
     private Boolean status;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn
+    RequestAsset requestAsset;
 }

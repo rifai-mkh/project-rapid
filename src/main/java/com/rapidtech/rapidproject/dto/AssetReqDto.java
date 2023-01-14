@@ -15,7 +15,7 @@ public class AssetReqDto {
     private String assetNo;
     private String assetName;
     private String type;
-    private String assetSerialNumber;
-    private Long assetPurchaseYear;
+    private String serialNumber;
+    private Long purchaseYear;
     private Boolean status;
 }
