@@ -59,6 +59,7 @@ public class AuditServiceImpl implements AuditService {
                 .result(auditReqDto.getResult()).build();
         Audit audit = auditRepository.save(newAudit);
 
+
         newAudit.setAssetList(
                 Asset.builder().id(auditReqDto.getAssetId()).build()
         );
