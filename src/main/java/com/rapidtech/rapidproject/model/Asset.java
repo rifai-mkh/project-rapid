@@ -13,9 +13,11 @@ import javax.persistence.*;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "tbl_asset")
 public class Asset {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "asset_id", length = 120)
     private Long id;
 
     @Column(name = "asset_no", length = 120)
@@ -39,5 +41,8 @@ public class Asset {
     @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn
-    RequestAsset requestAsset;
+    private RequestAsset requestAsset;
+
+    @OneToOne(mappedBy = "assetList")
+    private Audit audit;
 }

@@ -14,18 +14,16 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "tbl_request_asset")
 public class RequestAsset {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String picName;
-    private String address;
 
     @OneToMany(mappedBy = "requestAsset",cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
     private List<Asset> assets;
 
-    @JsonIgnore
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn
-    Approval approval;
+    private Approval approval;
 }

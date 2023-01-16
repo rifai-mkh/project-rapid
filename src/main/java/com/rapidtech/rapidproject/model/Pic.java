@@ -6,21 +6,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "tbl_approval")
-public class Approval {
+@Table(name = "tbl_pic")
+public class Pic {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Boolean approval;
-    private String reason;
-
-    @OneToOne(mappedBy = "approval")
-    private RequestAsset requestAssets;
+    private String picName;
+    private String address;
 }
